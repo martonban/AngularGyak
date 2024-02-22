@@ -6,7 +6,6 @@
   </div>
   <div class="row">
     <div class="col-md-8">
-      <button class = "btn btn-primary mb-2" (click)="openForm()" *ngIf="!isFormVisible">Új hozzáadás</button>
       <ul *ngFor="let applicant of applicants">
         <li [class.text-danger] = "applicant.experience == '0-5' && applicant.desiredSalary > 400000">
           <button class="btn btn-sm btn-danger" (click)="deleteApplicant(applicant)">
@@ -17,26 +16,27 @@
           {{applicant.desiredSalary}} Ft fizetési igénye
         </li>
       </ul>
+      <button class = "btn btn-primary mb-2" (click)="openForm()" *ngIf="!isFormVisible">Új hozzáadás</button>
     </div>
-    <div class="col-md-4" *ngIf="isFormVisible">
+    <div class="col-md-4" *ngIf="isFormVisible == true">
       <div class="mb-3">
         <label for="name" class="form-label">Név</label>
-        <input type="text" class="form-control" id="name" ([(ngModel)]="newApplicant.name")>
+        <input type="text" class="form-control" id="name" [(ngModel)]="newApplicant.name">
 
         <label for="name" class="form-label">Role</label>
-        <input type="text" class="form-control" id="role" ([(ngModel)]="newApplicant.role")>
+        <input type="text" class="form-control" id="role" [(ngModel)]="newApplicant.role">
 
         <label for="name" class="form-label">Expariance</label>
-        <select class="form-select" aria-label="Default select example" id="experience" ([(ngModel)]="newApplicant.experience")>
+        <select class="form-select" aria-label="Default select example" id="experience" [(ngModel)]="newApplicant.experience">
           <option value="0-5">0-5</option>
           <option value="5-10">5-10</option>
           <option value="10+">10+</option>
         </select>
 
         <label for="name" class="form-label">Role</label>
-        <input type="number" class="form-control" id="desiredSalary" ([(ngModel)]="newApplicant.desiredSalary")>
+        <input type="number" class="form-control" id="desiredSalary" [(ngModel)]="newApplicant.desiredSalary">
 
-        <button class="btn btn-primary" (click)="addApplicant()">Send</button>
+        <button class="btn btn-primary mt-2" (click)="addApplicant()">Send</button>
 
       </div>
     </div>

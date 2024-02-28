@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { VersionType } from '../type';
 
 @Component({
   selector: 'app-control',
@@ -8,5 +9,6 @@ import { Component } from '@angular/core';
   styleUrl: './control.component.css'
 })
 export class ControlComponent {
-
+  @Output()
+  versionChanged = new EventEmitter<VersionType>();
 }

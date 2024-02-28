@@ -1,12 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { VersionChange } from '../type';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-changelog',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './changelog.component.html',
   styleUrl: './changelog.component.css'
 })
 export class ChangelogComponent {
-
+  @Input()
+  changes: VersionChange[] = [];
 }

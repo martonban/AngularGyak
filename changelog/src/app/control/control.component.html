@@ -1,1 +1,9 @@
-<p>control works!</p>
+<button class="btn btn-primary me-3" (click)="versionChanged.emit('major')">
+  Increment major
+</button>
+<button class="btn btn-info me-3" (click)="versionChanged.emit('minor')">
+  Increment minor
+</button>
+<button class="btn btn-secondary me-3" (click)="versionChanged.emit('patch')">
+  Increment patch
+</button>

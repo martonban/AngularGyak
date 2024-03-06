@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col-md-12">
+    <h3>Welcome to our AI chat</h3>
+    <h4>Please type your name:</h4>
+    <div class="row">
+      <div class="col-md-10">
+        <input type="text" id="username" class="form-control" placeholder="type your name here"
+        [(ngModel)]="username">
+      </div>
+      <div class="col-md-2">
+        <button class="btn btn-outline-primary"
+          (click)="saveUsername()">
+          Submit
+        </button>
+      </div>
+    </div>
+
+  </div>
+</div>

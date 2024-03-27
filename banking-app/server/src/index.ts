@@ -1,6 +1,7 @@
 import { AppDataSource } from "./data-source"
 // "esModuleInterop": true, a serveren belüli tsconfig-ba
 import express from 'express';
+import { getRouter } from "./routes";
 
 async function main() {
   try {
@@ -10,7 +11,15 @@ async function main() {
     // Express server létrehozása
     const app = express();
 
-    // TODO :: routers
+
+    // Ő csinál mindennből json-t MINIDG
+    app.use(express.json());
+
+
+    // Routers megadás
+
+    app.use('/api', getRouter());
+
 
     // Server elindítása
     app.listen(3000, () => {

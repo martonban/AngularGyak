@@ -7,12 +7,18 @@ export class User {
     id: number
 
     @Column()
-    firstName: string
+    customerId: string;
 
     @Column()
-    lastName: string
+    name: string;
 
     @Column()
-    age: number
+    address: string;
+
+    @Column()
+    phone: string;
+
+    @Column()
+    idCard: string
 
 }

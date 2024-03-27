@@ -23,7 +23,10 @@
     "bootstrap": "^5.3.2",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
-    "zone.js": "~0.14.3"
+    "zone.js": "~0.14.3",
+    "typeorm": "0.3.20",
+    "reflect-metadata": "^0.1.13",
+    "mysql": "^2.14.1"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^17.2.0",
@@ -37,6 +40,8 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
-    "typescript": "~5.3.2"
+    "typescript": "~5.3.2",
+    "ts-node": "10.9.1",
+    "@types/node": "^16.11.10"
   }
 }

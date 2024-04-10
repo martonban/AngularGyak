@@ -15,7 +15,13 @@ export class Controller {
 
   getOne = async(req, res) => {
     try {
-      // TODO
+      const id = req.params.id;
+      const entity = await this.repository.findOneBy({id: id});
+
+      if(!entity) {
+        return this.handleError(res, null, 404, 'Entity is not found.');
+      }
+      res.json(entity);
     } catch(err) {
       this.handleError(res, err);
     }

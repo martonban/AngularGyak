@@ -1,8 +1,7 @@
-import { AppDataSource } from "../data-source";
-import { User } from "../entity/User";
+import { Repository } from "typeorm";
 
-export class Controller {
-  repository = AppDataSource.getRepository(User);
+export abstract class Controller {
+  repository: Repository<any>;
 
   getAll = async(req, res) => {
     try {

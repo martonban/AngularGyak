@@ -1,10 +1,10 @@
 import express from 'express';
-import { Controller } from './controller/base.controller';
+import { UserController } from './controller/user.controller';
 
 export function getRouter() {
   const router = express.Router();
 
-  const userController = new Controller;
+  const userController = new UserController;
 
   router.get('/user', userController.getAll);
   router.get('/user/:id', userController.getOne);

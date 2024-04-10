@@ -29,7 +29,11 @@ export class Controller {
 
   create = async(req, res) => {
     try {
-      // TODO
+      const entity = this.repository.create(req.body as object);
+      delete entity.id;
+
+      const entityInserted =  await this.repository.save(entity);
+      res.json(entityInserted);
     } catch(err) {
       this.handleError(res, err);
     }

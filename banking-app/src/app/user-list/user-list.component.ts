@@ -1,6 +1,7 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { UserService } from '../services/user.service';
 import { UserDTO } from '../../../models';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-list',
@@ -11,6 +12,7 @@ import { UserDTO } from '../../../models';
 })
 export class UserListComponent implements OnInit {
   userService = inject(UserService);
+  router = inject(Router);
 
   users: UserDTO[] = [];
 
@@ -21,4 +23,7 @@ export class UserListComponent implements OnInit {
     });
   }
 
+  goToUserForm(id: number) {
+    this.router.navigate(['/edit-user', id]);
+  }
 }

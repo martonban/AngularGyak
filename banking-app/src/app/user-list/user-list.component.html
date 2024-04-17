@@ -6,6 +6,7 @@
             <th>Lakcím</th>
             <th>Telefonszám</th>
             <th>Személyi ig. szám</th>
+            <th>Műveletek</th>
         </tr>
     </thead>
     <tbody>
@@ -16,7 +17,9 @@
                 <td>{{user.address}}</td>
                 <td>{{user.phone}}</td>
                 <td>{{user.idCard}}</td>
-
+                <td>
+                    <button class="btn btn-outline-primary" (click)="goToUserForm(user.id)">Módosítás</button>
+                </td>
             </tr>
         }
     </tbody>

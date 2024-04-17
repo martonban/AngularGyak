@@ -26,4 +26,18 @@ export class UserListComponent implements OnInit {
   goToUserForm(id: number) {
     this.router.navigate(['/edit-user', id]);
   }
+
+  deleteUser(user: UserDTO) {
+    this.userService.delete(user.id).subscribe({
+      next: () => {
+        const index = this.users.indexOf(user);
+        if(index > -1) {
+          this.users.splice(index, 1);
+        }
+      },
+      error: (err) => {
+        console.error(err);
+      }
+    });
+  }
 }

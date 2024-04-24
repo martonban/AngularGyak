@@ -25,5 +25,7 @@ export class User implements UserDTO{
 
     @OneToMany(() => BankTransfer, (tranaction) => tranaction.source)
     outgoingTransactions: BankTransfer[];
-
+    
+    @OneToMany(() => BankTransfer, (transaction) => transaction.destination)
+    incomingTrannsaction: BankTransfer[];
 }

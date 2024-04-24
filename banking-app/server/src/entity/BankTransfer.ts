@@ -14,10 +14,10 @@ export class BankTransfer implements BankTransferDTO {
     @CreateDateColumn()
     timestamp: string;
 
-    @ManyToOne(() => User, (user) => user.outgoingTransactions)
+    @ManyToOne(() => User, (user) => user.outgoingTransactions, {eager: true})
     source: UserDTO;
 
-
+    @ManyToOne(() => User, (user) => user.incomingTrannsaction, {eager: true})
     destination: UserDTO;
 
 }

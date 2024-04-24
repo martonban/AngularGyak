@@ -18,5 +18,7 @@ export function getRouter() {
   router.get('/transactions', transactionController.getAll);
   router.post('/transactions', transactionController.create);
 
+  router.get('/transaction/created-by/:useId', transactionController.transactionsOfUser)
+
   return router;
 }

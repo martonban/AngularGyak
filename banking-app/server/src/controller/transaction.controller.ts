@@ -10,12 +10,29 @@ export class TransactionController extends Controller {
           const entity = this.repository.create(req.body as object);
           delete entity.id;
           delete entity.timestamp;
-          
+
           const entityInserted =  await this.repository.save(entity);
           res.json(entityInserted);
         } catch(err) {
           this.handleError(res, err);
         }
       };
+
+      transactionsOfUser = async(req, res) => {
+        try{
+            const userId = req.params.userId;
+
+            const tranactions = await this.repository.find({
+                where: {
+                    source: {id: userId}
+                }
+            });
+
+            res.json(tranactions);
+        } catch(err) {
+            this.handleError(res, err);
+        }
+      }
+
 
 }

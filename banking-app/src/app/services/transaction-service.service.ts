@@ -20,4 +20,8 @@ export class TransactionService {
   create(transaction: BankTransferDTO) {
     return this.http.post<BankTransferDTO>('/api/transactions', transaction);
   }
+
+  transactionsOfUser(userId: number) {
+    return this.http.get<BankTransferDTO[]>('/api/transaction/created-by/' + userId);
+  }
 }

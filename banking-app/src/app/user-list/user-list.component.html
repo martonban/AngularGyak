@@ -20,6 +20,8 @@
                 <td>
                     <button class="btn btn-outline-primary" (click)="goToUserForm(user.id)">Módosítás</button>
                     <button class="btn btn-outline-danger" (click)="deleteUser(user)">Törlés</button>
+                    <button class="btn btn-outline-danger" (click)="getTransactionsOfUser(user.id)">Kimenő Tranzakció</button>
+
                 </td>
             </tr>
         }

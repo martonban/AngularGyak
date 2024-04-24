@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { UserListComponent } from './user-list/user-list.component';
 import { UserFormComponent } from './user-form/user-form.component';
+import { TransactionFormComponent } from './transaction-form/transaction-form.component';
 
 export const routes: Routes = [
     {
@@ -14,5 +15,9 @@ export const routes: Routes = [
     {
         path: 'edit-user/:id',
         component: UserFormComponent
+    },
+    {
+        path: 'add-transaction',
+        component: TransactionFormComponent
     }
 ];
